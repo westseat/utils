@@ -1,8 +1,13 @@
 #!/bin/bash
 
-SCRIPT_DIR=`pwd`
+
+SCRIPT_DIR="$(dirname $0)"
 WESTSEAT_DIR="${SCRIPT_DIR}/westseat"
 BIO_DIR="${SCRIPT_DIR}/bioelectricity"
+
+echo "script_dir: ${SCRIPT_DIR}"
+echo "westseat_dir: ${WESTSEAT_DIR}"
+echo "bio_dir: ${BIO_DIR}"
 
 # clone westseat repo
 echo "[INFO]: try to back up westseat repo"

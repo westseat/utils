@@ -7,3 +7,4 @@ Collect util script to improve performance.
 | script    |    description  |
 |----------|-----------------|
 | `backup_westseat.sh`  | back up repos that related westseat |
+| `backup_dependencies.sh`| backup dependent repository |

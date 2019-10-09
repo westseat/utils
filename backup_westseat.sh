@@ -2,10 +2,13 @@
 
 
 SCRIPT_DIR="$(dirname $0)"
-WESTSEAT_DIR="${SCRIPT_DIR}/westseat"
-BIO_DIR="${SCRIPT_DIR}/bioelectricity"
+cd "${SCRIPT_DIR}"
+CURRENT_DIR="$(pwd)"
 
-echo "script_dir: ${SCRIPT_DIR}"
+WESTSEAT_DIR="${CURRENT_DIR}/westseat"
+BIO_DIR="${CURRENT_DIR}/bioelectricity"
+
+echo "script_dir: ${CURRENT_DIR}"
 echo "westseat_dir: ${WESTSEAT_DIR}"
 echo "bio_dir: ${BIO_DIR}"
 

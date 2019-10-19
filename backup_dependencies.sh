@@ -24,7 +24,7 @@ if [ -d "$MRAA_DIR" ]; then
 	cd "$MRAA_DIR"
 	git pull
 else
-	git clone https://github.com/intel-iot-devkit/mraa.git
+	git clone https://github.com/intel-iot-devkit/mraa.git "${MRAA_DIR}"
 fi
 echo "End back up mraa"
 
@@ -33,7 +33,7 @@ if [ -d "$UPM_DIR" ]; then
 	cd "$UPM_DIR"
 	git pull
 else
-	git clone https://github.com/intel-iot-devkit/upm.git
+	git clone https://github.com/intel-iot-devkit/upm.git "${UPM_DIR}"
 fi
 echo "End back up upm"
 
@@ -42,6 +42,6 @@ if [ -d "$LIBSOC_DIR" ]; then
 	cd "$LIBSOC_DIR"
 	git pull
 else
-	git clone https://github.com/jackmitch/libsoc.git
+	git clone https://github.com/jackmitch/libsoc.git "${LIBSOC_DIR}"
 fi
 echo "End back up libsoc"	

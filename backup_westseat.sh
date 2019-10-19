@@ -5,8 +5,11 @@ SCRIPT_DIR="$(dirname $0)"
 cd "${SCRIPT_DIR}"
 CURRENT_DIR="$(pwd)"
 
-WESTSEAT_DIR="${CURRENT_DIR}/westseat"
-BIO_DIR="${CURRENT_DIR}/bioelectricity"
+WESTSEAT_REPO_NAME="westseat"
+BIO_REPO_NAME="bioelectricity"
+
+WESTSEAT_DIR="${CURRENT_DIR}/${WESTSEAT_REPO_NAME}"
+BIO_DIR="${CURRENT_DIR}/${BIO_REPO_NAME}"
 
 echo "script_dir: ${CURRENT_DIR}"
 echo "westseat_dir: ${WESTSEAT_DIR}"
@@ -19,7 +22,7 @@ if [ -d "${WESTSEAT_DIR}" ]; then
 	git pull
 	echo "[INFO]: pull westseat done"
 else
-	git clone git@e.coding.net:westseat/westseat.git
+	git clone git@e.coding.net:westseat/westseat.git "${WESTSEAT_DIR}"
 	echo "[INFO]: clone westseat done"
 fi
 
@@ -34,7 +37,7 @@ if [ -d "${BIO_DIR}" ]; then
 	echo "[INFO]: pull westseat done"
 
 else
-	git clone git@e.coding.net:westseat/bioelectricity.git
+	git clone git@e.coding.net:westseat/bioelectricity.git "${BIO_DIR}"
 	echo "[INFO]: clone bio repo done"
 fi
 

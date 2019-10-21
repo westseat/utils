@@ -11,13 +11,13 @@ def checkSwig():
 	arr = ret.splitlines()
 	if "command not found" in ret:
 		print("[Error]: Please install [swig3.0]")
+		return
+	ver = arr[1].split()
+	major,minor,patch= ver[2].split(".")
+	if (int(major) == 3) and (int(minor) == 0) and (int(patch) >= 5):
+		print("[Success]:",arr[1])
 	else:
-		ver = arr[1].split()
-		major,minor,patch= ver[2].split(".")
-		if (int(major) == 3) and (int(minor) == 0) and (int(patch) >= 5):
-			print("[Success]:",arr[1])
-		else:
-			print("[Error]: Please make swig3.0 >= 3.0.5")
+		print("[Error]: Please make swig3.0 >= 3.0.5")
 		
 def checkCmake():
 	output = subprocess.run(["cmake", "--version"], capture_output=True)
@@ -25,13 +25,13 @@ def checkCmake():
 	arr = ret.splitlines()
 	if "command not found" in ret:
 		print("Please install cmake 3.1+")
+		return
+	ver = arr[0].split()
+	major,minor,patch = ver[2].split('.')
+	if (int(major) == 3) and (int(minor) >= 1):
+		print("[Success]:", arr[0])
 	else:
-		ver = arr[0].split()
-		major,minor,patch = ver[2].split('.')
-		if (int(major) == 3) and (int(minor) >= 1):
-			print("[Success]:", arr[0])
-		else:
-			print("[Error]: Please make cmake >= 3.1") 
+		print("[Error]: Please make cmake >= 3.1") 
 
 def checkPython3():
 	dir = sysConf.get_config_vars()['INCLUDEPY']
